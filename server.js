@@ -41,5 +41,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Orbital ready on http://localhost:${PORT}`);
+  console.log(`Orbital prêt sur http://localhost:${PORT}`);
 });

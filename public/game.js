@@ -14,9 +14,9 @@ const menuBtn = document.getElementById('menu');
 
 const MENU_COPY = {
   title: 'ORBITAL',
-  text: 'Move the mouse — your moon orbits the planet.<br/>Deflect anything that comes for it.',
-  start: 'Insert Coin',
-  hint: 'click insert coin · space to start',
+  text: 'Bouge la souris — ta lune orbite autour de la planète.<br/>Dévie tout ce qui vient vers elle.',
+  start: 'Insérer une pièce',
+  hint: 'clique sur insérer · espace pour démarrer',
 };
 
 const PLANET_RADIUS = 30;
@@ -145,8 +145,8 @@ function burst(x, y, color, count) {
 }
 
 function updateHud() {
-  scoreEl.textContent = state.score.toLocaleString();
-  bestEl.textContent = state.best.toLocaleString();
+  scoreEl.textContent = state.score.toLocaleString('fr-FR');
+  bestEl.textContent = state.best.toLocaleString('fr-FR');
   comboEl.textContent = `×${state.combo}`;
   livesEl.innerHTML = '';
   for (let i = 0; i < MAX_LIVES; i++) {
@@ -194,10 +194,10 @@ function gameOver() {
     state.best = state.score;
     writeBest(state.best);
   }
-  overlayTitle.textContent = 'GAME OVER';
-  overlayText.innerHTML = `Score <strong>${state.score.toLocaleString()}</strong> · Best <strong>${state.best.toLocaleString()}</strong>`;
-  startBtn.textContent = 'Retry';
-  overlayHint.textContent = 'space to retry · m for menu';
+  overlayTitle.textContent = 'FIN DE PARTIE';
+  overlayText.innerHTML = `Score <strong>${state.score.toLocaleString('fr-FR')}</strong> · Record <strong>${state.best.toLocaleString('fr-FR')}</strong>`;
+  startBtn.textContent = 'Recommencer';
+  overlayHint.textContent = 'espace pour recommencer · m pour le menu';
   menuBtn.hidden = false;
   overlay.classList.add('visible');
   updateHud();
